@@ -33,8 +33,8 @@ def subroutine_b(N, leftbc, rightbc):
 
 def jacobi(A, F, iter, x_0):
     D = np.diagflat(np.diag(A))
-    L = -np.tril(A) + D
-    U = -np.triu(A) + D
+    L = -(np.tril(A) - D)
+    U = -(np.triu(A) - D)
     x_k = x_0
 
     for i in range(iter):
