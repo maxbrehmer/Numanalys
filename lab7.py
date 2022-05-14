@@ -25,14 +25,14 @@ def power_iteration(A, x_0, k):
     return lambda_1
 
 # Question 1
-lambda_a = 3
-lambda_b = 3.1  # close to lambda_a
+lambda_a = 3.1
+lambda_b = 3.11  # close to lambda_a
 #lambda_b = 7   # not close
 A = Create2by2Matrix(lambda_a, lambda_b)
 print(A)
 
 # Question 2
-k = 10
+k = 10000
 qr = QR(A, k)
 print(qr)
 
