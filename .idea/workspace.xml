@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="lab 7 complete">
-      <change afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
+    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="Added start to project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab7.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab7.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652311582539</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added start to project">
+      <created>1652496078012</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652496078012</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +238,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="made up errors in lab 6" />
     <MESSAGE value="lab 7 complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab 7 complete" />
+    <MESSAGE value="Added start to project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added start to project" />
   </component>
 </project>
