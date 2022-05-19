@@ -1,6 +1,5 @@
 import numpy as np
-import scipy
-import math
+from scipy import integrate
 import matplotlib.pyplot as plt
 
 # Temperature and Salinity (tracer) equation
@@ -56,42 +55,32 @@ def density(N, T, S):
 
     return z, rho, h
 
-def pressure(N, T, S, g, leftbc, rightbc):
+def pressure_analytical(N, g, T, S):
     h = 1000 / (N + 1)
-
     z = np.linspace(-1000, 0, N + 2)
+    p = []
+    rho = density(N, T, S)
 
-    A = np.zeros((N, N))
-    F = np.zeros(N)
+    for i in range(N+2):
+        p.append(-g*rho[1][i]*z[i])
 
-    # Assembly
-    A[0, 0] = 0
-    A[0, 1] = 1
+    return z, p, h
 
-    F[0] = g*density(T, S) - leftbc/(2*h)
+def pressure(N, g, T, S):
+    h = 1000 / (N + 1)
+    rho = density(N, T, S)[1]
 
-    for i in range(1, N - 1):
-        A[i, i - 1] = -1
-        A[i, i] = 0
-        A[i, i + 1] = 1
-        F[i] = g*density(T, S)
+    def func(a, b, sub):
+        add = []
+        for i in range(int(a), int(b)):
+            add.append(g*rho[2*i-sub])
+        return add
 
-    A[N - 1, N - 2] = -1
-    A[N - 1, N - 1] = 0
-    F[N - 1] = g*density(T, S) - rightbc/(2*h)
-
-    p_h_int = np.linalg.solve(1/(2*h)*A, F)
-
-    p_h = np.zeros(N + 2)
-
-    p_h[0] = leftbc
-    p_h[1:N + 1] = p_h_int
-    p_h[-1] = rightbc
-
-    return z, p_h, h
+    p = -h/3 * (g*rho[0] + 4 * sum(func(1, (N+1)/2, 1)) + 2 * sum(func(1, (N+1)/2-1, 0)) + g*rho[N+1])
+    return p
 
 # Plotting
-N = 100
+N = 1000
 v = 1.0
 u = 0.01
 # Temp
@@ -100,16 +89,32 @@ zT, T_h, hT = tracer(N, v, u, 0.1, -1.5)
 zS, S_h, hS = tracer(N, v, u, 35.0, 34.0)
 # Density
 zD, D_h, hD = density(N, T_h, S_h)
+# Pressure
+zP, P_h, hP = pressure_analytical(N, 9.81, T_h, S_h)
 
 plt.plot(zT, T_h, label="Temperature")
+plt.xlabel("Depth (m)")
+plt.ylabel("˚C")
 plt.legend()
 plt.show()
 plt.clf()
 plt.plot(zS, S_h, label="Salinity")
+plt.xlabel("Depth (m)")
+plt.ylabel("PSU")
 plt.legend()
 plt.show()
 plt.clf()
 plt.plot(zD, D_h, label="Density")
+plt.xlabel("Depth (m)")
+plt.ylabel("kg/m^3")
 plt.legend()
 plt.show()
 plt.clf()
+plt.plot(zP, P_h, label="Pressure")
+plt.xlabel("Depth (m)")
+plt.ylabel("Pa")
+plt.legend()
+plt.show()
+plt.clf()
+
+print('Pressure at -1000 meters is ' + str(pressure(N, 9.81, T_h, S_h)) + " Pascal")

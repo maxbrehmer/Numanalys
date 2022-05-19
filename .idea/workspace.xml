@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="Added start to project">
+    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="Project temperature, salinity and density done.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
@@ -221,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652496078012</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Project temperature, salinity and density done.">
+      <created>1652576332519</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652576332519</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -239,6 +246,18 @@
     <MESSAGE value="made up errors in lab 6" />
     <MESSAGE value="lab 7 complete" />
     <MESSAGE value="Added start to project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added start to project" />
+    <MESSAGE value="Project temperature, salinity and density done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Project temperature, salinity and density done." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
