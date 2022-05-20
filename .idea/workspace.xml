@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="Project temperature, salinity and density done.">
+    <list default="true" id="9696b14c-1b00-4d7e-928a-5dc7cc84e51a" name="Changes" comment="Project code finalized">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
     </list>
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652576332519</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Project code finalized">
+      <created>1652930878785</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652930878785</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -247,7 +254,8 @@
     <MESSAGE value="lab 7 complete" />
     <MESSAGE value="Added start to project" />
     <MESSAGE value="Project temperature, salinity and density done." />
-    <option name="LAST_COMMIT_MESSAGE" value="Project temperature, salinity and density done." />
+    <MESSAGE value="Project code finalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project code finalized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

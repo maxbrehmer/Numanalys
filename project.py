@@ -1,5 +1,4 @@
 import numpy as np
-from scipy import integrate
 import matplotlib.pyplot as plt
 
 # Temperature and Salinity (tracer) equation
@@ -55,17 +54,6 @@ def density(N, T, S):
 
     return z, rho, h
 
-def pressure_analytical(N, g, T, S):
-    h = 1000 / (N + 1)
-    z = np.linspace(-1000, 0, N + 2)
-    p = []
-    rho = density(N, T, S)
-
-    for i in range(N+2):
-        p.append(-g*rho[1][i]*z[i])
-
-    return z, p, h
-
 def pressure(N, g, T, S):
     h = 1000 / (N + 1)
     rho = density(N, T, S)[1]
@@ -76,7 +64,7 @@ def pressure(N, g, T, S):
             add.append(g*rho[2*i-sub])
         return add
 
-    p = -h/3 * (g*rho[0] + 4 * sum(func(1, (N+1)/2, 1)) + 2 * sum(func(1, (N+1)/2-1, 0)) + g*rho[N+1])
+    p = h/3 * (g*rho[0] + 4 * sum(func(1, (N+1)/2, 1)) + 2 * sum(func(1, (N+1)/2-1, 0)) + g*rho[N+1])
     return p
 
 # Plotting
@@ -89,8 +77,6 @@ zT, T_h, hT = tracer(N, v, u, 0.1, -1.5)
 zS, S_h, hS = tracer(N, v, u, 35.0, 34.0)
 # Density
 zD, D_h, hD = density(N, T_h, S_h)
-# Pressure
-zP, P_h, hP = pressure_analytical(N, 9.81, T_h, S_h)
 
 plt.plot(zT, T_h, label="Temperature")
 plt.xlabel("Depth (m)")
@@ -110,11 +96,6 @@ plt.ylabel("kg/m^3")
 plt.legend()
 plt.show()
 plt.clf()
-plt.plot(zP, P_h, label="Pressure")
-plt.xlabel("Depth (m)")
-plt.ylabel("Pa")
-plt.legend()
-plt.show()
-plt.clf()
 
+#Pressure
 print('Pressure at -1000 meters is ' + str(pressure(N, 9.81, T_h, S_h)) + " Pascal")
